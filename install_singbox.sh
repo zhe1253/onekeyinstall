@@ -49,7 +49,7 @@ EOF
       "type": "vless",
       "tag": "vless-in",
       "listen": "::",
-      "listen_port": 8543,
+      "listen_port": 443,
       "sniff": true,
       "sniff_override_destination": true,
       "users": [
