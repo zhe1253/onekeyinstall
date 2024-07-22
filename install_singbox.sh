@@ -69,7 +69,7 @@ EOF
             "server_port": 443
           },
           "private_key": "4KTfAXjO5NM_k9otUQtTY8tZATT6pVTvUnRqb4cTIXc",
-          "short_id": "7a8e30c53ba19a07"
+          "short_id": "a1f60e0f27d84fa6"
         }
       }
     }
