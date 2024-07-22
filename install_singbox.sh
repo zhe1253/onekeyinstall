@@ -68,7 +68,7 @@ EOF
             "server": "nijigen-works.jp",
             "server_port": 443
           },
-          "private_key": "4KTfAXjO5NM_k9otUQtTY8tZATT6pVTvUnRqb4cTIXc",
+          "private_key": "2KZ4uouMKgI8nR-LDJNP1_MHisCJOmKGj9jUjZLncVU",
           "short_id": "a1f60e0f27d84fa6"
         }
       }
