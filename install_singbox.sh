@@ -45,6 +45,34 @@ EOF
     "timestamp": true
   },
   "inbounds": [
+      {
+      "type": "vless",
+      "tag": "vless2-in",
+      "listen": "::",
+      "listen_port": 8443,
+      "sniff": true,
+      "sniff_override_destination": true,
+      "users": [
+        {
+          "name": "",
+          "uuid": "b58b7106-1067-45e9-a8db-8adca1a70ae1",
+          "flow": "xtls-rprx-vision"
+        }
+      ],
+      "tls": {
+        "enabled": true,
+        "server_name": "nijigen-works.jp",
+        "reality": {
+          "enabled": true,
+          "handshake": {
+            "server": "nijigen-works.jp",
+            "server_port": 443
+          },
+          "private_key": "2KZ4uouMKgI8nR-LDJNP1_MHisCJOmKGj9jUjZLncVU",
+          "short_id": "a1f60e0f27d84fa6"
+        }
+      }
+    },
     {
       "type": "vless",
       "tag": "vless-in",
@@ -78,8 +106,34 @@ EOF
     {
       "type": "direct",
       "tag": "direct"
-    }
-  ]
+    },
+    {
+      "type": "wireguard",
+      "tag": "warp",
+      "local_address": [
+        "172.16.0.2/32",
+        "2606:4700:110:88db:4ea6:bb2:5226:1f66/128"
+      ],
+      "server": "engage.cloudflareclient.com",
+      "server_port": 2408,
+      "private_key": "oBZK4e1yfFaXdNL6GeE3sVFCctpj4eXU/VS3vmsYBnk=",
+      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
+      "reserved": "wFOI",
+       "mtu": 1280
+}
+  ],
+  "route": {
+    "rules": [
+      {
+        "inbound": "vless-in",
+        "outbound": "direct"
+      },
+      {
+        "inbound": "vless2-in",
+        "outbound": "warp"
+      }
+    ]
+}
 }
 EOF
     else
